@@ -10,3 +10,11 @@ containsUppercase2 = any (\x -> x `elem` ['A' .. 'Z'])
 
 containsUppercase3 :: [Char] -> Bool
 containsUppercase3 = foldr (\ x -> (||) (x `elem` ['A' .. 'Z'])) False
+
+-- Me after I actually learned some higher order functions
+
+containsUppercase4 :: Foldable t => t Char -> Bool 
+containsUppercase4 = foldr (\x acc -> (x `elem` ['A' .. 'Z']) || acc) False
+
+containsUppercase5 :: Foldable t => t Char -> Bool 
+containsUppercase5 = foldl (\acc x -> x `elem` ['A' .. 'Z'] || acc ) False

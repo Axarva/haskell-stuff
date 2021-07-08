@@ -9,3 +9,4 @@ fibonacci n
     | n == 1  = 0
     | n == 2  = 1
     | otherwise = fiboCalc 0 1 (n - 3)
+
